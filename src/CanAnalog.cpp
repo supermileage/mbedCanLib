@@ -4,7 +4,7 @@ CanAnalog::CanAnalog(PinName pin, unsigned canID_) : CanItem(canID_), analog(pin
 
 void CanAnalog::poll() {
     float dataAsFloat = read(); // Between 0 and 1
-    char data[12]; 
+    char data[10]; 
     sprintf(data, "%.3f", dataAsFloat);
     sendMessage(data);
 }
