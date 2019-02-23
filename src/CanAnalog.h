@@ -7,6 +7,7 @@
 class CanAnalog : private CanItem {
     public:
         CanAnalog(PinName pin, unsigned canID_);
+        void poll();
         float read();
     private:
         AnalogIn analog;
