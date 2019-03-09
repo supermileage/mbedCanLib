@@ -1,12 +1,12 @@
 #include "CanButton.h"
 
-CanButton::CanButton(PinName pin, unsigned canID_) : CanItem(canID_), button(pin, PullUp), on(false) {}
+CanButton::CanButton(PinName pin, unsigned canID_) : CanItem(canID_), button(pin, PullDown), on(false) {}
 
 void CanButton::poll() {
-    bool readPin = !button.read(); // Pulled up, so 0 when pushed
+    bool readPin = button.read();
     if(!on && readPin) {
         debounceDelay();
-        if(!button.read()) { // Debounce
+        if(button.read()) { // Debounce
             toggleButton();
         }
     } else if(on && !readPin) {
