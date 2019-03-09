@@ -1,10 +1,9 @@
 #include "CanButton.h"
 
-// TODO: Change back to pull down
 CanButton::CanButton(PinName pin, unsigned canID_) : CanItem(canID_), button(pin, PullDown), on(false) {}
 
 void CanButton::poll() {
-    bool readPin = button.read(); // Pulled up, so 0 when pushed
+    bool readPin = button.read();
     if(!on && readPin) {
         debounceDelay();
         if(button.read()) { // Debounce
