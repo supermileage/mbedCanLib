@@ -2,7 +2,7 @@
 #define CANIDS_H
 
 // Must be declared const
-const unsigned throttleID = 1;
+const unsigned throttleID = 1000;
 const unsigned indicatorRID = 2;
 const unsigned indicatorLID = 3;
 const unsigned headlightsID = 4;

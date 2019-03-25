@@ -7,6 +7,6 @@ extern CAN can;
 CanItem::CanItem(unsigned canID_) : canID(canID_){}
 
 void CanItem::sendMessage(const char* data) {
-    cout << "SendingID: " << canID << endl;
+    cout << "SendingID: " << canID << "With data: " << data << endl;
     can.write(CANMessage(canID,data,8));
 }
