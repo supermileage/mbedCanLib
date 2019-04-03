@@ -9,5 +9,6 @@ const unsigned headlightsID = 4;
 const unsigned wiperID = 5;
 const unsigned hazardsID = 6;
 const unsigned hornID = 7;
+const unsigned brake = 8;
 
 #endif 
