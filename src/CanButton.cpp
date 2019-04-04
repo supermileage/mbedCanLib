@@ -5,10 +5,7 @@ CanButton::CanButton(PinName pin, unsigned canID_) : CanItem(canID_), button(pin
 void CanButton::poll() {
     bool readPin = button.read();
     if(!on && readPin) {
-        debounceDelay();
-        if(button.read()) { // Debounce
-            toggleButton();
-        }
+        toggleButton();
     } else if(on && !readPin) {
         toggleButton();
     }
@@ -23,10 +20,4 @@ void CanButton::toggleButton() {
     }
 }
 
-// Mbed wait doesnt work while debugging
-void CanButton::debounceDelay() {
-    Timer timer;
-    timer.start();
-    while (timer.read_ms() < 100) { } // delays by 100ms
-}
 

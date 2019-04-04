@@ -13,7 +13,6 @@ class CanButton: private CanItem {
         DigitalIn button;
         bool on;
         void toggleButton();
-        void debounceDelay();
 };
 
 #endif 
